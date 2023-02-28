@@ -17,10 +17,10 @@ public class TopicosController {
 	@ResponseBody
 	public List<Topico> listado() {
 
-		Topico topico = new Topico("Titulo del tópico", "Mesaje", new Curso("Spirng Boot Parte 1", "Desarrollo"));
-		Topico topico = new Topico("Titulo del tópico", "Mesaje", new Curso("Spirng Boot Parte 1", "Desarrollo"));
+		Topico topico = new Topico("Titulo del tópico", "Mesaje del tópico", new Curso("Spring Boot Parte 1", "Desarrollo"));
+		Topico topico2 = new Topico("Titulo del tópico2", "Mesaje del tópico", new Curso("Spring Boot Parte 1", "Desarrollo"));
 
-		return Arrays.asList(topico, topico, topico);
+		return Arrays.asList(topico, topico2);
 
 	}
 
