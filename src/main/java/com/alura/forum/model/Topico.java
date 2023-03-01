@@ -4,15 +4,39 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+
+@Entity
 public class Topico {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
+	
 	private String titulo;
+	
 	private String mensaje;
+	
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
+	
+	@Enumerated(EnumType.STRING)
 	private StatusTopico status = StatusTopico.SIN_RESPUESTA;
+	
+	@ManyToOne
 	private Usuario autor;
+	
+	@ManyToOne
 	private Curso curso;
+	
+	@OneToMany(mappedBy = "topico")
 	private List<Respuesta> respuestas = new ArrayList<>();
 
 	public Topico(String titulo, String mensaje, Curso curso) {

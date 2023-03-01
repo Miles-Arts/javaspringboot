@@ -3,21 +3,19 @@ package com.alura.forum.controller;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alura.forum.controller.dto.TopicoDTO;
 import com.alura.forum.model.Curso;
 import com.alura.forum.model.Topico;
 
-//@Controller
+
 @RestController
 public class TopicosController {
 
 	@RequestMapping("/topicos")
-	//@ResponseBody
+
 	public List<TopicoDTO> listado() {
 
 		Topico topico = new Topico("Titulo del tópico", "Mesaje del tópico", new Curso("Spring Boot Parte 1", "Desarrollo"));

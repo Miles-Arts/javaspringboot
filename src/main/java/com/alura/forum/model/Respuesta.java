@@ -2,13 +2,30 @@ package com.alura.forum.model;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+
+@Entity 
 public class Respuesta {
 
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	private String mensaje;
+	
+	@ManyToOne
 	private Topico topico;
+	
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
+	
+	@ManyToOne
 	private Usuario autor;
+	
 	private boolean solucion = false;
 
 	@Override
