@@ -1,5 +1,6 @@
 package com.alura.forum.controller;
 
+import java.nio.file.ReadOnlyFileSystemException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,12 +22,14 @@ public class TopicosController {
 	
 	
 	@RequestMapping("/topicos")
-	public List<TopicoDTO> listado() {
-
+	public List<TopicoDTO> listado(String nombreCurso) {
+		
+		//System.out.println(nombreCurso);
+		
 		/*Topico topico = new Topico("Titulo del tópico", "Mesaje del tópico", new Curso("Spring Boot Parte 1", "Desarrollo"));
 		Topico topico2 = new Topico("Titulo del tópico2", "Mesaje del tópico", new Curso("Spring Boot Parte 1", "Desarrollo"));*/
 		
-		return topicoServices.listado();
+		return topicoServices.listado(nombreCurso);
 		
 
 		//return TopicoDTO.convertir(Arrays.asList(topico, topico2 ));

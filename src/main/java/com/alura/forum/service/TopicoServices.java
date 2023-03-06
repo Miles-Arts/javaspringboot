@@ -16,10 +16,17 @@ public class TopicoServices {
 	@Autowired
 	private TopicoRepository topicoRespository;
 
-	public List<TopicoDTO> listado() {
+	public List<TopicoDTO> listado(String nombreCurso) {
 
-		List<Topico> resultado = topicoRespository.findAll();
+		List<Topico> resultado;
+		
+		if (nombreCurso == null) {
+			resultado = topicoRespository.findAll();
 
+		} else {
+			resultado = topicoRespository.findByCursoNombre(nombreCurso);
+		}
+			
 		return TopicoDTO.convertir(resultado);
 	}
 
