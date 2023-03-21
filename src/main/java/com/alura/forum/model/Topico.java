@@ -25,6 +25,16 @@ public class Topico {
 	
 	private String mensaje;
 	
+	private String cursoNombre;
+	
+	public String getCursoNombre() {
+		return cursoNombre;
+	}
+
+	public void setCursoNombre(String cursoNombre) {
+		this.cursoNombre = cursoNombre;
+	}
+
 	private LocalDateTime fechaCreacion = LocalDateTime.now();
 	
 	@Enumerated(EnumType.STRING)
