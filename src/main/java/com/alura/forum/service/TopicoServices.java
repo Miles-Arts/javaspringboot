@@ -24,7 +24,8 @@ public class TopicoServices {
 			resultado = topicoRespository.findAll();
 
 		} else {
-			resultado = topicoRespository.findByCurso_Nombre(nombreCurso);
+			resultado = topicoRespository.buscaTopicosPorNombreDelCurso(nombreCurso);
+			//resultado = topicoRespository.findByCurso_Nombre(nombreCurso);
 		}
 			
 		return TopicoDTO.convertir(resultado);
