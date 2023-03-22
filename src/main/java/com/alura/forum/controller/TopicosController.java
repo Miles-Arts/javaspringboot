@@ -37,12 +37,15 @@ public class TopicosController {
 		
 		return topicoServices.listado(nombreCurso);
 		
-
 	}
 	
 	@PostMapping
-	public void registrar() {
+	public void registrar(TopicoForm topicoForm) {
+		
+		
 		
 	}
-
 }
+
+
+
