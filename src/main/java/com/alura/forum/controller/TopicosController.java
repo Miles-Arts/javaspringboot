@@ -44,7 +44,7 @@ public class TopicosController {
 	@PostMapping
 	public void registrar(@RequestBody TopicoForm topicoForm) {
 		
-		
+		topicoServices.registrar(topicoForm);
 		
 	}
 }
