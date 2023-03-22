@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alura.forum.controller.dto.TopicoDTO;
+import com.alura.forum.controller.form.TopicoForm;
 import com.alura.forum.model.Curso;
 import com.alura.forum.model.Topico;
 import com.alura.forum.service.TopicoServices;
