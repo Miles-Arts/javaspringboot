@@ -1,5 +1,11 @@
 package com.alura.forum.controller.form;
 
+import java.util.Optional;
+
+import com.alura.forum.model.Curso;
+import com.alura.forum.model.Topico;
+import com.alura.forum.model.Usuario;
+
 public class TopicoForm {
 
 	private String titulo;
@@ -8,7 +14,7 @@ public class TopicoForm {
 	
 	private Long idUsuario;
 	
-	private String nombreCruso;
+	private String nombreCurso;
 
 	public String getTitulo() {
 		return titulo;
@@ -34,12 +40,19 @@ public class TopicoForm {
 		this.idUsuario = idUsuario;
 	}
 
-	public String getNombreCruso() {
-		return nombreCruso;
+	public String getNombreCurso() {
+		return nombreCurso;
 	}
 
-	public void setNombreCruso(String nombreCruso) {
-		this.nombreCruso = nombreCruso;
+	public void setNombreCruso(String nombreCurso) {
+		this.nombreCurso = nombreCurso;
+	}
+
+	public Topico convertir(Optional<Usuario> usuario, Optional<Curso> curso) {
+		
+		return new Topico(titulo, mensaje, usuario, curso);
+		
+		//return null;
 	}
 	
 	

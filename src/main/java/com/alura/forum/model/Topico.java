@@ -3,6 +3,7 @@ package com.alura.forum.model;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -55,6 +56,22 @@ public class Topico {
 		this.mensaje = mensaje;
 		this.curso = curso;
 	}*/
+
+	
+	public Topico() {
+		
+	}
+	
+	
+	public Topico(String titulo, String mensaje, Optional<Usuario> usuario, Optional<Curso> curso) {
+	
+		this.titulo = titulo;
+		this.mensaje = mensaje;
+		
+		usuario.ifPresent(u -> this.autor = u);
+		curso.ifPresent(c -> this.curso = c);
+		
+	}
 
 	@Override
 	public int hashCode() {
