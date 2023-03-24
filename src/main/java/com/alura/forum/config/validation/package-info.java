@@ -1,0 +1,1 @@
+package com.alura.forum.config.validation;

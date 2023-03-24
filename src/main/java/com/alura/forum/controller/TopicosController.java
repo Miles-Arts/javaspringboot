@@ -21,6 +21,8 @@ import com.alura.forum.model.Curso;
 import com.alura.forum.model.Topico;
 import com.alura.forum.service.TopicoServices;
 
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping("/topicos")
@@ -39,12 +41,9 @@ public class TopicosController {
 	
 	
 	@PostMapping
-	public ResponseEntity<TopicoDTO> registrar(@RequestBody TopicoForm topicoForm, UriComponentsBuilder uriComponentsBuilder) {
+	public ResponseEntity<TopicoDTO> registrar(@Valid @RequestBody TopicoForm topicoForm, UriComponentsBuilder uriComponentsBuilder) {
 		
-		/*if(topicoForm.getMensaje().isEmpty()) {	
-			return null;	
-		}*/
-		
+	
 		
 		//Respuesta 201
 		Topico topico = topicoServices.registrar(topicoForm);
