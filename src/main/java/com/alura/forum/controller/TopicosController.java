@@ -41,6 +41,11 @@ public class TopicosController {
 	@PostMapping
 	public ResponseEntity<TopicoDTO> registrar(@RequestBody TopicoForm topicoForm, UriComponentsBuilder uriComponentsBuilder) {
 		
+		/*if(topicoForm.getMensaje().isEmpty()) {	
+			return null;	
+		}*/
+		
+		
 		//Respuesta 201
 		Topico topico = topicoServices.registrar(topicoForm);
 		

@@ -6,14 +6,22 @@ import com.alura.forum.model.Curso;
 import com.alura.forum.model.Topico;
 import com.alura.forum.model.Usuario;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class TopicoForm {
 
+	@NotBlank @Size(min = 5)
 	private String titulo;
 	
+	@NotBlank @Size(min = 5)
 	private String mensaje;
 	
+	@NotNull
 	private Long idUsuario;
 	
+	@NotBlank @Size(min = 5)
 	private String nombreCurso;
 
 	public String getTitulo() {
