@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,7 @@ import com.alura.forum.repository.CursoRepository;
 import com.alura.forum.repository.TopicoRepository;
 import com.alura.forum.repository.UsuarioRepository;
 
+@SpringBootApplication
 @Service
 public class TopicoServices {
 
@@ -59,6 +61,15 @@ public class TopicoServices {
 		
 		return topicoRespository.save(topico);
 		
+	}
+
+	public TopicoDTO detalle(Long id) {
+		
+		/*Optional<Curso> topico = topicoRepository.getReferenceById(ID id);*/
+		
+		Topico topico = topicoRepository.findById(id);
+		
+		return new TopicoDTO(topico);
 	}
 
 }
