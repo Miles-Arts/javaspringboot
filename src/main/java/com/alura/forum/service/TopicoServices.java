@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.alura.forum.controller.dto.DetalleTopicoDTO;
 import com.alura.forum.controller.dto.TopicoDTO;
+import com.alura.forum.controller.form.ActualizaTopicoForm;
 import com.alura.forum.controller.form.TopicoForm;
 import com.alura.forum.model.Curso;
 import com.alura.forum.model.Topico;
@@ -18,6 +19,8 @@ import com.alura.forum.model.Usuario;
 import com.alura.forum.repository.CursoRepository;
 import com.alura.forum.repository.TopicoRepository;
 import com.alura.forum.repository.UsuarioRepository;
+
+import jakarta.validation.Valid;
 
 @SpringBootApplication
 @Service
@@ -71,6 +74,16 @@ public class TopicoServices {
 		Topico topico = topicoRepository.findById(id);
 		
 		return new DetalleTopicoDTO(topico);
+	}
+
+	public void actualizar(Long id, @Valid ActualizaTopicoForm actualizaTopicoForm) {
+		
+		Topico topico = topicoRepository.findById(id);
+		
+		topico.setTitulo(actualizaTopicoForm.getTiutulo());
+		topico.setMensaje(actualizaTopicoForm.getMensaje());
+		
+		return topico;
 	}
 
 }

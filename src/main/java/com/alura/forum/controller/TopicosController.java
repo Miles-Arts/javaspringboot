@@ -51,9 +51,10 @@ public class TopicosController {
 	}
 	
 	@PutMapping("{/id}")
-	public ResponseEntity actualizar(@RequestBody ActualizaTopicoForm actualizaTopicoForm) {
+	public ResponseEntity actualizar(@PathVariable Long id, @RequestBody @Valid ActualizaTopicoForm actualizaTopicoForm) {
 		
 		
+		topicoServices.actualizar(id, actualizaTopicoForm);
 		
 	}
 
