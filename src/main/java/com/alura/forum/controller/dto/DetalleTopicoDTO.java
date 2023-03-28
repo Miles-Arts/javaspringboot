@@ -2,8 +2,10 @@ package com.alura.forum.controller.dto;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import com.alura.forum.model.Curso;
 import com.alura.forum.model.StatusTopico;
 import com.alura.forum.model.Topico;
 

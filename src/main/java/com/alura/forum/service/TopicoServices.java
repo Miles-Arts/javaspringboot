@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
 
+import com.alura.forum.controller.dto.DetalleTopicoDTO;
 import com.alura.forum.controller.dto.TopicoDTO;
 import com.alura.forum.controller.form.TopicoForm;
 import com.alura.forum.model.Curso;
@@ -63,13 +64,13 @@ public class TopicoServices {
 		
 	}
 
-	public TopicoDTO detalle(Long id) {
+	public DetalleTopicoDTO detalle(Long id) {
 		
 		/*Optional<Curso> topico = topicoRepository.getReferenceById(ID id);*/
 		
 		Topico topico = topicoRepository.findById(id);
 		
-		return new TopicoDTO(topico);
+		return new DetalleTopicoDTO(topico);
 	}
 
 }

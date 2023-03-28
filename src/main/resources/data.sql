@@ -9,3 +9,4 @@ INSERT INTO TOPICO(titulo, mensaje, fecha_creacion, status, autor_id, curso_id) 
 
 INSERT INTO RESPUESTA (fecha_creacion, mensaje, solucion, autor_id, topico_id) VALUES ('2020-08-20 14:15:16', 'Respuesta sobre la duda', FALSE, 1, 2);
 INSERT INTO RESPUESTA (fecha_creacion, mensaje, solucion, autor_id, topico_id) VALUES ('2020-08-25 18:19:20', 'Una otra respuesta sobre la duda', FALSE, 1, 2);
+
