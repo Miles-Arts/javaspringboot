@@ -7,18 +7,18 @@ public class ActualizaTopicoForm {
 	
 	
 	@NotEmpty @Size(min = 5)
-	private String tiutulo;
+	private String titulo;
 	
 	@NotEmpty @Size(min = 5)
 	private String mensaje;
 
 	
-	public String getTiutulo() {
-		return tiutulo;
+	public String getTitulo() {
+		return titulo;
 	}
 
 	public void setTiutulo(String tiutulo) {
-		this.tiutulo = tiutulo;
+		this.titulo = titulo;
 	}
 
 	public String getMensaje() {

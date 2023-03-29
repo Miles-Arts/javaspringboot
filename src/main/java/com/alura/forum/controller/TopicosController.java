@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -50,7 +51,7 @@ public class TopicosController {
 		
 	}
 	
-	@PutMapping("{/id}")
+	@PutMapping("/{id}")
 	public ResponseEntity actualizar(@PathVariable Long id, @RequestBody @Valid ActualizaTopicoForm actualizaTopicoForm) {
 		
 		
@@ -71,5 +72,14 @@ public class TopicosController {
 
 		return ResponseEntity.created(uri).body(new TopicoDTO(topico));
 
+	}
+	
+	
+	@DeleteMapping("/{id}")
+	public ResponseEntity borrar(@PathVariable Long id) {
+		
+		topicoServices.borrar(id);
+		
+		return ResponseEntity.ok().build();
 	}
 }
