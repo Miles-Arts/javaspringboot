@@ -14,6 +14,9 @@ public class DetalleTopicoDTO {
 	
 	private Long id;
 	
+	private String titulo;
+	
+
 	private String mensaje;
 	
 	private LocalDateTime fechacreacion;
@@ -29,6 +32,8 @@ public class DetalleTopicoDTO {
 	public DetalleTopicoDTO(Topico topico) {
 		
 		this.id = topico.getId();
+		
+		this.titulo = topico.getTitulo();
 		
 		this.mensaje = topico.getMensaje();
 		
@@ -48,6 +53,9 @@ public class DetalleTopicoDTO {
 	}
 
 
+	public String getTitulo() {
+		return titulo;
+	}
 
 	public Long getId() {
 		return id;

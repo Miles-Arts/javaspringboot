@@ -54,7 +54,9 @@ public class TopicosController {
 	public ResponseEntity actualizar(@PathVariable Long id, @RequestBody @Valid ActualizaTopicoForm actualizaTopicoForm) {
 		
 		
-		topicoServices.actualizar(id, actualizaTopicoForm);
+		Topico topico = topicoServices.actualizar(id, actualizaTopicoForm);
+		
+		return ResponseEntity.ok(new DetalleTopicoDTO(topico));
 		
 	}
 

@@ -20,6 +20,7 @@ import com.alura.forum.repository.CursoRepository;
 import com.alura.forum.repository.TopicoRepository;
 import com.alura.forum.repository.UsuarioRepository;
 
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
 @SpringBootApplication
@@ -76,6 +77,8 @@ public class TopicoServices {
 		return new DetalleTopicoDTO(topico);
 	}
 
+	
+	@Transactional
 	public void actualizar(Long id, @Valid ActualizaTopicoForm actualizaTopicoForm) {
 		
 		Topico topico = topicoRepository.findById(id);
